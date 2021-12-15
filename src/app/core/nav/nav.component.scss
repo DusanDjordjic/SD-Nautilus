@@ -1,3 +1,35 @@
+@import "src/assets/styles/vars";
+@import "src/assets/styles/mixins";
 nav {
-  border: 1px solid red;
+  background-color: $color-dark-500;
+  color: $color-light;
+  display: flex;
+  align-items: center;
+
+  padding: 0.5rem 1rem;
+  box-shadow: 2px 3px 10px rgba($color: #000000, $alpha: 0.5);
+  .logo {
+    color: $color-primary-500;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+  }
+
+  ul {
+    display: flex;
+    li {
+      margin-right: 1rem;
+      a {
+        text-transform: uppercase;
+        transition: all 0.3s;
+        &.active {
+          color: $color-primary-500;
+          text-decoration: underline;
+        }
+        &:hover {
+          color: $color-primary-500;
+        }
+      }
+    }
+  }
 }

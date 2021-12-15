@@ -1,17 +1,37 @@
 <nav>
-  <div>SD_NAUTILUS</div>
+  <div class="logo">SD_NAUTILUS</div>
   <ul>
     <li>
-      <a href="">Home</a>
+      <a
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
     </li>
     <li>
-      <a href="">Orders</a>
+      <a
+        routerLink="orders"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Orders</a
+      >
     </li>
     <li>
-      <a href="">Docs</a>
+      <a
+        routerLink="docs"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Docs</a
+      >
     </li>
     <li>
-      <a href="">Contact</a>
+      <a
+        routerLink="contact"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Contact</a
+      >
     </li>
   </ul>
 </nav>
