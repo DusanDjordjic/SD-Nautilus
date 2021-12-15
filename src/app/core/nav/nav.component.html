@@ -1,4 +1,11 @@
 <nav>
+  <button
+    type="button"
+    (click)="changeSidebarVisibility()"
+    *ngIf="sidebarDisplayed"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
   <div class="logo">SD_NAUTILUS</div>
   <ul>
     <li>

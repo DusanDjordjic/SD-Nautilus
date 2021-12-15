@@ -1,7 +1,27 @@
 <div>
   <app-nav></app-nav>
 </div>
-<router-outlet></router-outlet>
-<div>
-  <app-footer></app-footer>
+<div class="content" [ngClass]="{ active: sidebarVisible }">
+  <aside>
+    <div class="sidebar-content">
+      <ul>
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">Orders</a>
+        </li>
+        <li>
+          <a href="">Docs</a>
+        </li>
+        <li>
+          <a href="">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
 </div>

@@ -1,0 +1,48 @@
+@import "src/assets/styles/vars";
+@import "src/assets/styles/mixins";
+.content {
+  position: relative;
+  aside {
+    transition: all 0.3s;
+    padding: 1rem 1px;
+    min-width: 200px;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: $color-dark-500;
+    color: $color-light;
+    border-right: 1px solid $color-dark-300;
+    transform: translateX(-100%);
+    .sidebar-content {
+      position: sticky;
+      top: 16px;
+      a {
+        display: block;
+        padding: 0.5rem 1rem;
+        &:hover {
+          color: $color-primary-200;
+          background-color: $color-dark-300;
+        }
+        &.active {
+          color: $color-primary-500;
+        }
+      }
+    }
+  }
+  .main-content {
+    transition: all 0.3s;
+    width: calc(100%);
+    transform: translateX(0px);
+  }
+  &.active {
+    aside {
+      transform: translateX(0);
+    }
+    .main-content {
+      width: calc(100% - 200px);
+      transform: translateX(200px);
+    }
+  }
+}

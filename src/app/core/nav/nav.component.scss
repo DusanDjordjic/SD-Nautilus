@@ -6,8 +6,18 @@ nav {
   display: flex;
   align-items: center;
 
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   box-shadow: 2px 3px 10px rgba($color: #000000, $alpha: 0.5);
+  button {
+    display: flex;
+
+    cursor: pointer;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    background-color: transparent;
+    color: $color-light;
+    border: none;
+  }
   .logo {
     color: $color-primary-500;
     text-transform: uppercase;
