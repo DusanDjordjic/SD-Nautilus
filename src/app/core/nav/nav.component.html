@@ -2,7 +2,7 @@
   <button
     type="button"
     (click)="changeSidebarVisibility()"
-    *ngIf="sidebarDisplayed"
+    [ngClass]="{ active: sidebarDisplayed }"
   >
     <i class="fas fa-bars"></i>
   </button>

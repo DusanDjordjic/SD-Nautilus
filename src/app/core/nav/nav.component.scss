@@ -1,6 +1,11 @@
 @import "src/assets/styles/vars";
 @import "src/assets/styles/mixins";
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   background-color: $color-dark-500;
   color: $color-light;
   display: flex;
@@ -17,6 +22,9 @@ nav {
     background-color: transparent;
     color: $color-light;
     border: none;
+    &.active {
+      display: flex !important;
+    }
   }
   .logo {
     color: $color-primary-500;
@@ -26,7 +34,7 @@ nav {
   }
 
   ul {
-    display: flex;
+    display: none;
     li {
       margin-right: 1rem;
       a {
@@ -40,6 +48,16 @@ nav {
           color: $color-primary-500;
         }
       }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  nav {
+    button {
+      display: none;
+    }
+    ul {
+      display: flex;
     }
   }
 }

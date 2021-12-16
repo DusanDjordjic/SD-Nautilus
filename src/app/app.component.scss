@@ -2,13 +2,14 @@
 @import "src/assets/styles/mixins";
 .content {
   position: relative;
+  padding-top: 60px;
   aside {
     transition: all 0.3s;
     padding: 1rem 1px;
     min-width: 200px;
     position: absolute;
-    height: 100%;
-    top: 0;
+    height: calc(100% - 60px);
+    top: 60px;
     left: 0;
     z-index: 10;
     background-color: $color-dark-500;
@@ -17,7 +18,7 @@
     transform: translateX(-100%);
     .sidebar-content {
       position: sticky;
-      top: 16px;
+      top: 76px;
       a {
         display: block;
         padding: 0.5rem 1rem;
@@ -41,8 +42,22 @@
       transform: translateX(0);
     }
     .main-content {
-      width: calc(100% - 200px);
-      transform: translateX(200px);
+      width: calc(100%);
+      transform: translateX(0px);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .content {
+    &.active {
+      aside {
+        transform: translateX(0);
+      }
+      .main-content {
+        width: calc(100% - 200px);
+        transform: translateX(200px);
+      }
     }
   }
 }
