@@ -10,6 +10,15 @@
     }
   }
 }
+@mixin card {
+  padding: 2rem;
+  transition: all 0.3s;
+  border: 1px solid rgba($color-dark-500, 0.1);
+  &:hover {
+    border-color: transparent;
+    box-shadow: 1px 4px 16px -4px rgba($color-dark-500, $alpha: 0.3);
+  }
+}
 @mixin button($bcg-color: $color-dark-500, $color: $color-light, $fs: 1rem) {
   cursor: pointer;
   border: none;
@@ -34,6 +43,11 @@
 }
 @mixin lg {
   @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media only screen and (min-width: 1200px) {
     @content;
   }
 }
