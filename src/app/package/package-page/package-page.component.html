@@ -41,38 +41,22 @@
         <thead>
           <tr>
             <th>Package name</th>
-            <th>Usecases</th>
+            <th>Commands count</th>
             <th>Description</th>
             <th>Price</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2D</td>
-            <td>For 2D modeling</td>
-            <td>Package for 2D modeling</td>
-            <td>$100</td>
+          <tr *ngFor="let singlePackage of packages">
+            <td>{{ singlePackage.name }}</td>
+            <td>{{ singlePackage.commandsCount }}</td>
+            <td>{{ singlePackage.description }}</td>
+            <td>${{ singlePackage.price }}</td>
             <td>
-              <button>details</button>
-            </td>
-          </tr>
-          <tr>
-            <td>3D</td>
-            <td>For 3D modeling</td>
-            <td>Package for 3D modeling</td>
-            <td>$150</td>
-            <td>
-              <button>details</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Waterfront</td>
-            <td>For waterfront modeling</td>
-            <td>Package for waterfront modeling</td>
-            <td>$170</td>
-            <td>
-              <button>details</button>
+              <a [routerLink]="[singlePackage.link]"
+                ><i class="fas fa-info"></i
+              ></a>
             </td>
           </tr>
         </tbody>
