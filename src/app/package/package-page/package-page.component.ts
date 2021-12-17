@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Package } from 'src/app/shared/models/package.model';
+import { SidebarService } from 'src/app/sidebar/sidebar.service';
 import { PackageService } from '../package.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { PackageService } from '../package.service';
 })
 export class PackagePageComponent implements OnInit {
   packages: Package[] = [];
-  constructor(private packageService: PackageService) {}
+  constructor(
+    private packageService: PackageService,
+    private sidebarService: SidebarService
+  ) {}
 
   ngOnInit(): void {
+    this.sidebarService.setDisplayability(false);
     this.getPackages();
   }
   getPackages() {

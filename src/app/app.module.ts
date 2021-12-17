@@ -7,6 +7,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { SidebarService } from './sidebar/sidebar.service';
 import { PackageModule } from './package/package.module';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { PackageModule } from './package/package.module';
     FooterComponent,
     HomePageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, PackageModule],
+  imports: [BrowserModule, AppRoutingModule, PackageModule, OrdersModule],
   providers: [SidebarService],
   bootstrap: [AppComponent],
 })
